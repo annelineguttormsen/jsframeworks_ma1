@@ -1,18 +1,26 @@
-$(document).ready(function() {
-	let imgWraps = $("#jq__gallery ul li");
-	let imgs = $("#jq__gallery ul li img");
-	imgWraps.css("height",imgWraps.width());
+//enkelt slideshow
 
-	for (let i = 0;i<imgs.length;i++) {
-		if (imgs[i].naturalWidth<imgs[i].naturalHeight) {
-			console.log(imgs[i]);
-			imgs[i].style.width = "100%";
-		} else {
-			imgs[i].style.height = "100%";
-		}
+//lagre slideshow elementene og pips som skal
+//vise hvor i slideshowet man er
+const $slideShowImgs = $(".slideshow__image");
+const $pips = $(".pip");
+
+let slideIndex = 1;
+
+//sett opp interval for å endre slideshow bilde
+let slideShowInterval = setInterval(function() {
+	changeSlide()
+},5000);
+
+function changeSlide() {
+	if (slideIndex==3) {
+		slideIndex = 0;
+		$($slideShowImgs[1]).removeClass("slideshow__image--current");
+		$($slideShowImgs[2]).removeClass("slideshow__image--current");
+		$($pips[2]).removeClass("pip--current");
 	}
-
-	$(window).on("resize",()=> {
-		imgWraps.css("height",imgWraps.width());
-	});
-});
+	$($pips[slideIndex-1]).removeClass("pip--current");
+	$($pips[slideIndex]).addClass("pip--current");
+	$($slideShowImgs[slideIndex]).addClass("slideshow__image--current");
+	slideIndex++;
+}

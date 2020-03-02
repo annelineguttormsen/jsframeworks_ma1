@@ -1,46 +1,65 @@
-#jq__gallery * {
-	margin:0;
-	padding:0;
+/*remove this*/
+.page__wrap {
+	width:1280px;
+	margin:0 auto;
 }
-#jq__gallery {
-	width:100%;
+/*remove this*/
+
+.slideshow {
+  width:100%;
+  height: 600px;
+  position: relative;
+  overflow:hidden;
 }
-#jq__gallery ul {
-	list-style-type:none;
-	box-sizing:border-box;
+.slideshow__image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s linear;
 }
-#jq__gallery ul li {
-	display:inline-block;
-	position:relative;
-	width:33%;
-	overflow:hidden;
-	box-sizing:border-box;
-	border:15px solid white;
-	transition:all .1s linear;
+.slideshow__image--one {
+  background: url("https://cmxpv89733.i.lithium.com/t5/image/serverpage/image-id/779434i1000F43A5E387397/image-size/large?v=1.0&px=999") no-repeat center;
+  background-size: cover;
 }
-#jq__gallery ul li:hover {
-	border:20px solid white;
-	opacity:0.8;
+.slideshow__image--two {
+  background:url("https://avante.biz/wp-content/uploads/Winter-Wallpaper-Hd/Winter-Wallpaper-Hd-001.jpg") no-repeat center;
+  background-size: cover;
+  right: -100%;
 }
-#jq__gallery ul li p {
-	position:absolute;
-	opacity:0;
-	top:45%;
-	width:100%;
-	text-align:center;
-	font-size:34px;
-	font-weight:700;
-	font-family:Montserrat;
-	transition:all .1s linear .1s;
+.slideshow__image--three {
+  background:url("https://images.unsplash.com/photo-1457269449834-928af64c684d?ixlib=rb-1.2.1&w=1000&q=80") no-repeat center;
+  background-size:cover;
+  right: -100%;
 }
-#jq__gallery ul li:hover p {
-	opacity:1;
+.slideshow__image--current {
+  right: 0px;
 }
-#jq__gallery ul li img{
-	position:relative;
+.slideshow__title {
+  position: absolute;
+  margin: 50px;
+  bottom: 150px;
+  font-size: 24px;
 }
-@media only screen and (max-width:980px) {
-	#jq__gallery ul li {
-		width:49%;
-	}
+.slideshow__button {
+  position: absolute;
+  bottom: 75px;
+  margin: 50px;
+}
+.slideshow__pips {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+}
+.slideshow__pips .pip {
+  display: inline-block;
+  transition: background 0.2s linear;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-right: 20px;
+  background: white;
+}
+.slideshow__pips .pip--current {
+  background: transparent;
 }
