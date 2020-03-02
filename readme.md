@@ -3,7 +3,7 @@
 This gallery automatically resizes according to its parent element.
 
 
-# # Installation
+## Installation
 
 At the the end of the `<head>` tag of your HTML, copy and paste this code:
 
