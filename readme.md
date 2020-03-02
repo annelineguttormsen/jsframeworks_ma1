@@ -69,7 +69,7 @@ At the the end of the `<head>` tag of your HTML, copy and paste this code:
 
 ```
 
-Then, at the end of the <body> tag of your HTML file, copy and paste this code:
+Then, at the end of the `<body>` tag of your HTML file, copy and paste this code:
 
 ```
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
