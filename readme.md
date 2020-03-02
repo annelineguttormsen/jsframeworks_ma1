@@ -112,6 +112,3 @@ Finally find wherever you want the gallery in your HTML and copy and paste this 
 	</div>
 </div>
 ```
-
-Example file:
-[ENKEL HTML FIL]
